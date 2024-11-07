@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Playfair Display', serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: antiquewhite;
+}
+
+.texto-no-visible {
+  display: none;
+}
+
+.header {
+  background-color: #313131;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* min-height: 65px; */
+  max-height: 70px;
+  padding: 5px 10%;
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+  width: 100%;
+}
+
+@media (max-width: 990px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 78px; /* Ajusta según la altura de tu header */
+    width: 100%;
+    background-color: #313131;
+    z-index: 10000;
+  }
+}
+
+.header .logo img {
+  height: 65px;
+  width: auto;
+  transition: all 0.3s;
+  cursor: pointer;
+  border-radius: 100%;
+}
+
+.header .logo img:hover {
+  transform: scale(1.2);
+}
+
+.header .nav-list {
+  list-style: none;
+}
+
+.header .nav-list li {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.header .nav-list li:hover {
+  transform: scale(1.1);
+}
+
+.header .nav-list a {
+  font-size: 700;
+  color: aliceblue;
+  text-decoration: none;
+}
+
+.header .nav-list li a:hover {
+  color: beige;
+}
+
+.fondoNegro {
+  background-color: #313131;
+}
+
+#galeria {
+  background-color: #313131;
+}
+
+.galeria-menu {
+  text-align: center;
+}
+.galeria-menu ul li {
+  display: inline-block;
+  margin: 0;
+  margin-right: 15px;
+  list-style: none;
+  cursor: pointer;
+  transition: all 500ms ease;
+}
+
+.galeria-item .item {
+  margin-bottom: 2em;
+  animation: aparecenImagenes 400ms ease;
+}
+
+.item img {
+  width: 100%;
+  vertical-align: middle;
+  transition: all 300ms ease;
+}
+
+.linkImage {
+  display: block;
+  width: 100%;
+}
+
+.linkImage picture {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  transition: all 500ms ease;
+}
+.item:hover img {
+  transform: scale(1.05);
+  filter: brightness(75%);
+}
+
+.hover-texto-imagen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 500ms ease;
+  z-index: 9999;
+}
+
+.item:hover .hover-texto-imagen {
+  opacity: 1;
+}
+
+.hover-texto-imagen p {
+  font-size: 1.2em;
+  font-weight: 600;
+  text-shadow: 3px 3px 6px grey;
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+.item:hover p {
+  text-decoration: underline;
+  opacity: 1;
+}
+
+.galeria .active {
+  color: #313131;
+}
+
+@keyframes aparecenImagenes {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#galeria h2 {
+  position: relative;
+}
+
+#galeria h2::after {
+  content: '';
+  background-color: antiquewhite;
+  position: absolute;
+  bottom: -0.15em;
+  left: 0;
+  width: 0;
+  height: 0.1em;
+  opacity: 0;
+  border-radius: 1em;
+  transition: opacity 600ms ease, width 600ms ease-in;
+}
+
+#galeria:hover h2::after {
+  opacity: 1;
+  width: 100%;
+}
+
+.titular {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+#Newsletter button {
+  background-color: antiquewhite;
+  color: #313131;
+  border: #313131;
+}
+
+@media (max-width: 576px) {
+  .galeria-item .item {
+    margin-bottom: 1em;
+  }
+  .hover-texto-imagen p {
+    font-size: 2em;
+  }
+}
+
+/*Productos*/
+.productos {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 40px 10px;
+}
+
+.productos li {
+  display: inline-block;
+  text-align: center;
+  /* width: 30%; */
+  vertical-align: top;
+  margin: 0 1.5%;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  border: 2px solid #000000;
+  border-radius: 10px;
+}
+
+.productos li:hover {
+  border-color: white;
+}
+
+.productos li:active {
+  border-color: #088c19;
+}
+
+.productos h2 {
+  font-size: 700;
+  font-weight: bold;
+}
+
+.productos li:hover h2 {
+  font-size: 31px;
+}
+
+.producto-descripcion {
+  font-size: 18px;
+}
+
+.producto-precio {
+  font-size: 20px;
+  font-weight: bold;
+  /* margin-top: 10px; */
+}
